@@ -1,9 +1,11 @@
 // import Seo from "../shared/Seo";
 import Navbar from "../components/Navbar"
+import { useEffect,useState } from "react";
 //  import { Container } from "react-bootstrap";6 
 import Footer from "../components/Footer";
 // import Carousel from 'react-bootstrap/Carousel';
 import ContactForm from "../components/Contact";
+import { useLocation } from "react-router-dom";
 
 // import { Link } from "react-router-dom";
 
@@ -14,9 +16,7 @@ import ContactForm from "../components/Contact";
 
 function Contact(){
 
-
-  
-
+const location = useLocation();
     return(
 
         <>
@@ -34,7 +34,7 @@ function Contact(){
                      
                         {/* -------------------- this is a comment ------------------ */}
                       
-                    <ContactForm />
+                    <ContactForm data={location.state?.data} />
                         {/* -------------------- Sponsor section ------------------ */}
 
 

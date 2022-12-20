@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
-function ContactForm() {
+
+function ContactForm({data,the}) {
   const [state, handleSubmit] = useForm("mjvznoqr");
   if (state.succeeded) {
       return <p className="suc">Thanks for Registering!<a href="/">Home</a> </p>;
@@ -31,6 +32,7 @@ function ContactForm() {
         name="Order"
         placeholder='Order'
         className="piii"
+        defaultValue={data}
 
       />
       <input
@@ -64,9 +66,9 @@ function ContactForm() {
     </form>
   );
 }
-function App() {
+function App({data}) {
   return (
-    <ContactForm />
+    <ContactForm data={data} />
   );
 }
 export default App;

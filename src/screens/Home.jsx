@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar"
 import { Container } from "react-bootstrap";
 import {Users} from "../components/users.js"
 import { useState } from "react";
+import {Link} from "react-router-dom"
 // import ContactForm from "./contact";
 
 
@@ -54,7 +55,7 @@ function Home(){
                        <h5 key={user.id}>{user.header_text}</h5>
                        <p  >{user.paragragh}</p>
                        <span> {user.price}</span> 
-                      <a href="/contact">  <button>{user.button}</button> </a>
+                      <Link to="/contact" state={{data:user.header_text}}>  <button>{user.button}</button> </Link>
                        </div>
                        
                        </div>
